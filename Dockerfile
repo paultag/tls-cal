@@ -1,8 +1,4 @@
-FROM debian:stretch
-
-RUN apt-get update && apt-get install -y python2.7 python-virtualenv libyaml-dev
-RUN echo "deb-src http://ftp.us.debian.org/debian/ stretch main" >> /etc/apt/sources.list
-RUN apt-get update && apt-get build-dep -y python-cryptography python-cffi python-werkzeug
+FROM python:2
 
 ADD . /opt/alexgaynor.net/tls-cal/
 WORKDIR /opt/alexgaynor.net/tls-cal/
